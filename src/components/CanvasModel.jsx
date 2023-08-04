@@ -8,14 +8,12 @@ const CanvasModel = () => {
 
   const { camera, gl } = useThree();
 
-  const gltf = useLoader(GLTFLoader, 'scene.gltf')
+  const gltf = useLoader(GLTFLoader, 'cake.glb')
 
   return (
     <>
       <orbitControls args={[camera, gl.domElement]} />
-      <ambientLight intensity={1.5} />
-      <pointLight position={[-3, -1, -1]} intensity={1} />
-      <pointLight position={[0, -5, 5]} intensity={0.5} />
+      <ambientLight intensity={0} />
       <primitive object={gltf.scene} />
     </>
   );
